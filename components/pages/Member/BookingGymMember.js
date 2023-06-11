@@ -26,7 +26,7 @@ const BookingGymMember = ({ navigation }) => {
       const data = await getData();
       const id = data.id;
       axios
-        .get(`http://127.0.0.1:8000/api/bookingGym/show/${id}`)
+        .get(`https://api.gofit.given.website/api/bookingGym/show/${id}`)
         .then((response) => {
           // filter bookingGym instruktur yang sesuai dengan ID instruktur
           setBookingGym(response.data.data);
@@ -40,7 +40,7 @@ const BookingGymMember = ({ navigation }) => {
 
   const cancelBooking = async (id) => {
     try {
-      await axios.post(`http://127.0.0.1:8000/api/bookingGym/cancel/${id}`);
+      await axios.post(`https://api.gofit.given.website/api/bookingGym/cancel/${id}`);
       // Hapus data booking dengan id yang sesuai dari state bookingGym
       setBookingGym((prevBookingKelas) => prevBookingKelas.filter((bookingGym) => bookingGym.id !== id));
     } catch (error) {

@@ -30,7 +30,7 @@ const AddBookingGym = () => {
   useEffect(() => {
     // Get data sesi from API
     axios
-      .get("http://127.0.0.1:8000/api/sesi")
+      .get("https://api.gofit.given.website/api/sesi")
       .then((response) => {
         setSesis(response.data.data);
       })
@@ -50,7 +50,7 @@ const AddBookingGym = () => {
     // Send data to API
     axios
       .post(
-        "http://127.0.0.1:8000/api/bookingGym",
+        "https://api.gofit.given.website/api/bookingGym",
         {
           id_member: id,
           id_sesi: idSesi,

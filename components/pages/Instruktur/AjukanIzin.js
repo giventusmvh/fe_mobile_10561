@@ -33,7 +33,7 @@ const AjukanIzin = () => {
   useEffect(() => {
     // Get data instruktur from API
     axios
-      .get("http://127.0.0.1:8000/api/instruktur")
+      .get("https://api.gofit.given.website/api/instruktur")
       .then((response) => {
         setInstrukturs(response.data.data);
       })
@@ -43,7 +43,7 @@ const AjukanIzin = () => {
 
     // Get data jadwalHarian from API
     axios
-      .get("http://127.0.0.1:8000/api/jadwalHarian/index")
+      .get("https://api.gofit.given.website/api/jadwalHarian/index")
       .then((response) => {
         setJadwalHarians(response.data.data);
       })
@@ -63,7 +63,7 @@ const AjukanIzin = () => {
     // Send data to API
     axios
       .post(
-        "http://127.0.0.1:8000/api/izinInstruktur/ajukanIzin",
+        "https://api.gofit.given.website/api/izinInstruktur/ajukanIzin",
         {
           id_instruktur: id,
           id_instruktur_pengganti: idInstrukturPengganti,

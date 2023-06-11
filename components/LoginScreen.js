@@ -23,7 +23,7 @@ const Login = () => {
 
   const handleLogin = () => {
     axios
-      .post("http://127.0.0.1:8000/api/loginMobile", { email, password }, {})
+      .post("https://api.gofit.given.website/api/loginMobile", { email, password }, {})
       .then(async (response) => {
         if (response.data.success) {
           if (response.data.instruktur) {

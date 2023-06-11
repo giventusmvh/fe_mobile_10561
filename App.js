@@ -19,6 +19,11 @@ import PricelistClass from "./components/pages/Umum/PricelistClass";
 import JadwalHarianUmum from "./components/pages/Umum/JadwalHarianUmum";
 import PresensiKelas from "./components/pages/Instruktur/PresensiKelas";
 import CekPresensiKelas from "./components/pages/Instruktur/CekPresensiKelas";
+import ProfileMember from "./components/pages/Member/ProfileMember";
+import ProfileInstruktur from "./components/pages/Instruktur/ProfileInstruktur";
+import HistoryGym from "./components/pages/Member/HistoryGym";
+import HistoryKelas from "./components/pages/Member/HistoryKelas";
+import HistoryInstruktur from "./components/pages/Instruktur/HistoryInstruktur";
 
 const Stack = createStackNavigator();
 export default function App() {
@@ -27,16 +32,21 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Instruktur" component={InstrukturScreen} />
+        <Stack.Screen name="ProfileInstruktur" component={ProfileInstruktur} />
         <Stack.Screen name="UbahPWInstruktur" component={UbahPWInstruktur} />
         <Stack.Screen name="IzinInstrukturTampil" component={IzinInstrukturTampil} />
         <Stack.Screen name="AjukanIzin" component={AjukanIzin} />
         <Stack.Screen name="Member" component={MemberScreen} />
+        <Stack.Screen name="ProfileMember" component={ProfileMember} />
         <Stack.Screen name="BookingKelasMember" component={BookingKelasMember} />
         <Stack.Screen name="BookingGymMember" component={BookingGymMember} />
         <Stack.Screen name="AddBookingKelas" component={AddBookingKelas} />
         <Stack.Screen name="AddBookingGym" component={AddBookingGym} />
+        <Stack.Screen name="HistoryGym" component={HistoryGym} />
+        <Stack.Screen name="HistoryKelas" component={HistoryKelas} />
         <Stack.Screen name="Manager" component={ManagerScreen} />
         <Stack.Screen name="PresensiInstruktur" component={PresensiInstruktur} />
+        <Stack.Screen name="HistoryInstruktur" component={HistoryInstruktur} />
         <Stack.Screen name="UbahPWManager" component={UbahPWManager} />
         <Stack.Screen name="Pricelist" component={PricelistClass} />
         <Stack.Screen name="JadwalHarianUmum" component={JadwalHarianUmum} />

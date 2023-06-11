@@ -18,7 +18,7 @@ const PresensiInstruktur = ({ navigation }) => {
 
   const fetchJadwalHarian = async () => {
     try {
-      const response = await axios.get("http://127.0.0.1:8000/api/jadwalHarian/indexToday");
+      const response = await axios.get("https://api.gofit.given.website/api/jadwalHarian/indexToday");
       setJadwalHarian(response.data.data);
     } catch (error) {
       console.error(error);
@@ -27,7 +27,7 @@ const PresensiInstruktur = ({ navigation }) => {
 
   const updateJamMulai = async (id) => {
     try {
-      const response = await axios.post(`http://127.0.0.1:8000/api/presensiInstruktur/jamMulai/${id}`);
+      const response = await axios.post(`https://api.gofit.given.website/api/presensiInstruktur/jamMulai/${id}`);
       alert("Berhasil Update Jam Mulai");
       // Handle the response as needed
       console.log(response.data);
@@ -41,7 +41,7 @@ const PresensiInstruktur = ({ navigation }) => {
 
   const updateJamSelesai = async (id) => {
     try {
-      const response = await axios.put(`http://127.0.0.1:8000/api/presensiInstruktur/jamSelesai/${id}`);
+      const response = await axios.put(`https://api.gofit.given.website/api/presensiInstruktur/jamSelesai/${id}`);
       alert("Berhasil Update Jam Selesai");
       // Handle the response as needed
       console.log(response.data);
@@ -69,9 +69,8 @@ const PresensiInstruktur = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Kelas Hari Ini</Text>
-      <ScrollView>
-        <FlatList data={jadwalHarian} renderItem={renderItem} keyExtractor={(item) => item.id.toString()} contentContainerStyle={styles.listContainer} />
-      </ScrollView>
+
+      <FlatList data={jadwalHarian} renderItem={renderItem} keyExtractor={(item) => item.id.toString()} contentContainerStyle={styles.listContainer} />
     </View>
   );
 };

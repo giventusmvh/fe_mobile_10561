@@ -34,8 +34,18 @@ const MemberScreen = ({ navigation }) => {
         </TouchableOpacity>
       </View>
 
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity style={[styles.button, { marginBottom: 20 }]}>
+      <View style={styles.row}>
+        <TouchableOpacity style={[styles.button, { marginLeft: 10, marginRight: 10 }]} onPress={() => navigation.navigate("HistoryKelas")}>
+          <Ionicons name="person-circle-outline" size={24} color="black" />
+          <Text style={styles.buttonText}>Histori Kelas</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={[styles.button, { marginLeft: 10, marginRight: 10 }]} onPress={() => navigation.navigate("HistoryGym")}>
+          <Ionicons name="person-circle-outline" size={24} color="black" />
+          <Text style={styles.buttonText}>Histori Gym</Text>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.row}>
+        <TouchableOpacity style={[styles.button, { marginLeft: 10, marginRight: 10 }]} onPress={() => navigation.navigate("ProfileMember")}>
           <Ionicons name="person-circle-outline" size={24} color="black" />
           <Text style={styles.buttonText}>Profile</Text>
         </TouchableOpacity>

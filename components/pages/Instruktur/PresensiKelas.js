@@ -21,7 +21,7 @@ const PresensiKelas = () => {
       const data = await getData();
       const id = data.id;
       axios
-        .get(`http://127.0.0.1:8000/api/jadwalHarian/indexToday/instruktur/${id}`)
+        .get(`https://api.gofit.given.website/api/jadwalHarian/indexToday/instruktur/${id}`)
         .then((response) => {
           // filter bookingKls instruktur yang sesuai dengan ID instruktur
           setKelas(response.data.data);

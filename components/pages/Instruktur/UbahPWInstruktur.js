@@ -21,7 +21,7 @@ const UbahPWInstruktur = ({ navigation }) => {
   const handleUbahPassword = async () => {
     const data = await getData();
     const id = data.id;
-    const url = `http://127.0.0.1:8000/api/instruktur/ubahPW/${id}`;
+    const url = `https://api.gofit.given.website/api/instruktur/ubahPW/${id}`;
     // const token = await AsyncStorage.getItem("token");
 
     try {

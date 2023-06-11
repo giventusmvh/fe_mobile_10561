@@ -21,7 +21,7 @@ const UbahPWManager = ({ navigation }) => {
   const handleUbahPassword = async () => {
     const data = await getData();
     const id = data.id;
-    const url = `http://127.0.0.1:8000/api/pegawai/ubahPW/${id}`;
+    const url = `https://api.gofit.given.website/api/pegawai/ubahPW/${id}`;
     // const token = await AsyncStorage.getItem("token");
 
     try {

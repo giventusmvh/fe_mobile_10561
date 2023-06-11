@@ -26,7 +26,7 @@ const BookingKelasMember = ({ navigation }) => {
       const data = await getData();
       const id = data.id;
       axios
-        .get(`http://127.0.0.1:8000/api/bookingKelas/show/${id}`)
+        .get(`https://api.gofit.given.website/api/bookingKelas/show/${id}`)
         .then((response) => {
           // filter bookingKls instruktur yang sesuai dengan ID instruktur
           setBookingKelas(response.data.data);
@@ -40,7 +40,7 @@ const BookingKelasMember = ({ navigation }) => {
 
   const cancelBooking = async (id) => {
     try {
-      await axios.post(`http://127.0.0.1:8000/api/bookingKelas/cancel/${id}`);
+      await axios.post(`https://api.gofit.given.website/api/bookingKelas/cancel/${id}`);
       // Hapus data booking dengan id yang sesuai dari state bookingKelas
       setBookingKelas((prevBookingKelas) => prevBookingKelas.filter((bookingKls) => bookingKls.id !== id));
     } catch (error) {
@@ -71,7 +71,7 @@ const BookingKelasMember = ({ navigation }) => {
             <Text style={styles.label}>Jam Kelas:</Text>
             <Text style={styles.inputan}>{bookingKls.jam_kelas}</Text>
             <Text style={styles.label}>Status Kelas:</Text>
-            <Text style={styles.inputan}>{bookingKls.status_jadwalHarian === 1 ? "Aktif" : "Libur"}</Text>
+            <Text style={styles.inputan}>{bookingKls.status_jadwalHarian === "1" ? "Aktif" : "Libur"}</Text>
             <TouchableOpacity onPress={() => cancelBooking(bookingKls.id)} style={styles.buttonRed}>
               <Text style={styles.buttonText}>Batalkan</Text>
             </TouchableOpacity>

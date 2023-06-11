@@ -14,7 +14,7 @@ const CekPresensiKelas = ({ route, navigation }) => {
     const fetchData = async () => {
       const { bookingId } = route.params;
       axios
-        .get(`http://127.0.0.1:8000/api/presensiKelas/showToday/${bookingId}`)
+        .get(`https://api.gofit.given.website/api/presensiKelas/showToday/${bookingId}`)
         .then((response) => {
           // filter presensiData instruktur yang sesuai dengan ID instruktur
           setPresensiData(response.data.data);
@@ -28,7 +28,7 @@ const CekPresensiKelas = ({ route, navigation }) => {
 
   const presensiKelasH = async (id) => {
     try {
-      const response = await axios.put(`http://127.0.0.1:8000/api/presensiKelas/presensiHadir/${id}`);
+      const response = await axios.put(`https://api.gofit.given.website/api/presensiKelas/presensiHadir/${id}`);
       alert("Berhasil Presensi Member");
       // Handle the response as needed
       console.log(response.data);
@@ -36,12 +36,11 @@ const CekPresensiKelas = ({ route, navigation }) => {
       if (error.response.data.cekPresensi) {
         alert("Instruktur belum Presensi!!!");
       }
-      console.error(error);
     }
   };
   const presensiKelasT = async (id) => {
     try {
-      const response = await axios.put(`http://127.0.0.1:8000/api/presensiKelas/presensiTidakHadir/${id}`);
+      const response = await axios.put(`https://api.gofit.given.website/api/presensiKelas/presensiTidakHadir/${id}`);
       alert("Berhasil Presensi Member");
       // Handle the response as needed
       console.log(response.data);
@@ -49,7 +48,6 @@ const CekPresensiKelas = ({ route, navigation }) => {
       if (error.response.data.cekPresensi) {
         alert("Instruktur belum Presensi!!!");
       }
-      console.error(error);
     }
   };
 
@@ -64,7 +62,7 @@ const CekPresensiKelas = ({ route, navigation }) => {
             <Text style={styles.label}>Nama Member:</Text>
             <Text style={styles.inputan}>{presensi.nama_member}</Text>
             <Text style={styles.label}>Status Kelas:</Text>
-            <Text style={styles.inputan}>{presensi.status_presensi === 0 ? "Tidak Hadir" : "Hadir"}</Text>
+            <Text style={styles.inputan}>{presensi.status_presensi === "0" ? "Tidak Hadir" : "Hadir"}</Text>
             {presensi.waktu_presensi_kelas !== null ? (
               <TouchableOpacity style={styles.buttonDisabled} disabled={true}>
                 <Text style={styles.buttonText}>Hadir</Text>

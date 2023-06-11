@@ -26,7 +26,7 @@ const IzinInstrukturTampil = ({ navigation }) => {
       const data = await getData();
       const id = data.id;
       axios
-        .get(`http://127.0.0.1:8000/api/izinInstruktur/show/${id}`)
+        .get(`https://api.gofit.given.website/api/izinInstruktur/show/${id}`)
         .then((response) => {
           // filter izin instruktur yang sesuai dengan ID instruktur
           setIzinInstruktur(response.data.data);
@@ -57,7 +57,7 @@ const IzinInstrukturTampil = ({ navigation }) => {
             <Text style={styles.label}>Keterangan:</Text>
             <Text style={styles.inputan}>{izin.keterangan}</Text>
             <Text style={styles.label}>Status Konfirmasi:</Text>
-            <Text style={styles.inputan}>{izin.konfirmasi === 1 ? "Sudah dikonfirmasi" : "Belum dikonfirmasi"}</Text>
+            <Text style={styles.inputan}>{izin.konfirmasi === "1" ? "Sudah dikonfirmasi" : "Belum dikonfirmasi"}</Text>
           </View>
         ))}
       </ScrollView>

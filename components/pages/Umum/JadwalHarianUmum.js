@@ -16,7 +16,7 @@ const JadwalHarianUmum = ({ navigation }) => {
 
   const fetchJadwalHarian = async () => {
     try {
-      const response = await axios.get("http://127.0.0.1:8000/api/jadwalHarian/index");
+      const response = await axios.get("https://api.gofit.given.website/api/jadwalHarian/index");
       setJadwalHarian(response.data.data);
     } catch (error) {
       console.error(error);
@@ -36,9 +36,8 @@ const JadwalHarianUmum = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Daftar Jadwal Harian</Text>
-      <ScrollView>
-        <FlatList data={jadwalHarian} renderItem={renderItem} keyExtractor={(item) => item.id.toString()} contentContainerStyle={styles.listContainer} />
-      </ScrollView>
+
+      <FlatList data={jadwalHarian} renderItem={renderItem} keyExtractor={(item) => item.id.toString()} contentContainerStyle={styles.listContainer} />
     </View>
   );
 };

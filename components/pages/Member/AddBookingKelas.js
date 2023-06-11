@@ -29,7 +29,7 @@ const AddBookingKelas = () => {
   useEffect(() => {
     // Get data jadwalHarian from API
     axios
-      .get("http://127.0.0.1:8000/api/jadwalHarian/index")
+      .get("https://api.gofit.given.website/api/jadwalHarian/index")
       .then((response) => {
         setJadwalHarians(response.data.data);
       })
@@ -49,7 +49,7 @@ const AddBookingKelas = () => {
     // Send data to API
     axios
       .post(
-        "http://127.0.0.1:8000/api/bookingKelas",
+        "https://api.gofit.given.website/api/bookingKelas",
         {
           id_member: id,
           id_jadwalHarian: idJadwalHarian,

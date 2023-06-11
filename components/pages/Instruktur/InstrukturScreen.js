@@ -24,7 +24,7 @@ const InstrukturScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.row}>
-        <TouchableOpacity style={[styles.button, { marginLeft: 10, marginRight: 10 }]}>
+        <TouchableOpacity style={[styles.button, { marginLeft: 10, marginRight: 10 }]} onPress={() => navigation.navigate("ProfileInstruktur")}>
           <Ionicons name="person-circle-outline" size={40} color="#000" />
           <Text style={styles.buttonText}>Profile</Text>
         </TouchableOpacity>
@@ -38,9 +38,9 @@ const InstrukturScreen = ({ navigation }) => {
           <Ionicons name="people-outline" size={40} color="#000" />
           <Text style={styles.buttonText}>Presensi Member Kelas</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={[styles.button, { marginLeft: 10, marginRight: 10 }]}>
-          <Ionicons name="people-circle-outline" size={40} color="#000" />
-          <Text style={styles.buttonText}>Presensi Instruktur</Text>
+        <TouchableOpacity style={[styles.button, { marginLeft: 10, marginRight: 10 }]} onPress={() => navigation.navigate("HistoryInstruktur")}>
+          <Ionicons name="clipboard-outline" size={40} color="#000" />
+          <Text style={styles.buttonText}>Histori Instruktur</Text>
         </TouchableOpacity>
       </View>
 

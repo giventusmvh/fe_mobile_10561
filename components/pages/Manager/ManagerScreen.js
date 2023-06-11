@@ -24,26 +24,6 @@ const ManagerScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.row}>
-        <TouchableOpacity style={[styles.button, { marginLeft: 10, marginRight: 10 }]}>
-          <Ionicons name="person-circle-outline" size={40} color="#000" />
-          <Text style={styles.buttonText}>Profile Member</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={[styles.button, { marginLeft: 10, marginRight: 10 }]}>
-          <Ionicons name="person-circle-outline" size={40} color="#000" />
-          <Text style={styles.buttonText}>Profile Instruktur</Text>
-        </TouchableOpacity>
-      </View>
-      <View style={styles.row}>
-        <TouchableOpacity style={[styles.button, { marginLeft: 10, marginRight: 10 }]}>
-          <Ionicons name="clipboard-outline" size={40} color="#000" />
-          <Text style={styles.buttonText}>Histori Member</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={[styles.button, { marginLeft: 10, marginRight: 10 }]}>
-          <Ionicons name="clipboard-outline" size={40} color="#000" />
-          <Text style={styles.buttonText}>Histori Instruktur</Text>
-        </TouchableOpacity>
-      </View>
-      <View style={styles.row}>
         <TouchableOpacity style={[styles.button, { marginLeft: 10, marginRight: 10 }]} onPress={() => navigation.navigate("PresensiInstruktur")}>
           <Ionicons name="clipboard-outline" size={40} color="#000" />
           <Text style={styles.buttonText}>Presensi Instruktur</Text>
